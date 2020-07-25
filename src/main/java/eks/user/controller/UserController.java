@@ -27,7 +27,7 @@ public class UserController {
     @Value("${variables.order.uri:http://localhost:8000}")
     private String orderHost;
 
-    @GetMapping("/eks/user/{userId}/order/{orderId}")
+    @GetMapping("/user/{userId}/order/{orderId}")
     public OrderVO getOrder(@PathVariable Long userId, @PathVariable Long orderId) {
         LOGGER.info("User {} getOrder - {}", userId, orderId);
         LOGGER.info("OrderHost: {}", orderHost);
@@ -42,7 +42,7 @@ public class UserController {
         return order;
     }
 
-    @GetMapping("/eks/user/{userId}/shipment/{shipmentId}")
+    @GetMapping("/user/{userId}/shipment/{shipmentId}")
     public Shipment getShipment(@PathVariable Long userId, @PathVariable Long shipmentId) {
         LOGGER.info("User {} getShipment - {}", userId, shipmentId);
         LOGGER.info("ShipmentHost: {}", shipmentHost);
